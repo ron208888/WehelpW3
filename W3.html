@@ -1,0 +1,402 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>W3作業</title>
+
+    <link rel="stylesheet" href="W3.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/e2deac9a44.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body onload="getData()">
+    <script>
+      function getData() {
+        fetch(
+          "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json"
+        )
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            let pro = document.getElementsByName("pro");
+
+            let content = document.getElementsByName("content");
+            let plus = document.getElementsByName("plus");
+            let pP = document.getElementsByName("pP");
+            let Pp = document.getElementsByName("Pp");
+            let pp = document.getElementsByName("pp");
+            let PP = document.getElementsByName("PP");
+            let pPp = document.getElementsByName("pPp");
+            for (let i = 0; i < 2; i++) {
+              let Url = data.result.results[i].file.split("https");
+
+              let PlaceImg = document.createElement("img");
+              PlaceImg.className = "img-pro";
+              PlaceImg.src = "https" + Url[1];
+              pro[i].appendChild(PlaceImg);
+
+              let placeName = document.createElement("p");
+              placeName.className = "text-pro";
+              let text = document.createTextNode(data.result.results[i].stitle);
+              placeName.appendChild(text);
+              pro[i].appendChild(placeName);
+              data.result.results.splice(i, 1);
+            }
+
+            for (let i = 0; i < content.length; i++) {
+              let Url = data.result.results[i].file.split("https");
+
+              let PlaceImg = document.createElement("img");
+
+              PlaceImg.src = "https" + Url[1];
+              PlaceImg.className = "img-item";
+              content[i].appendChild(PlaceImg);
+
+              let placeName = document.createElement("p");
+
+              let text = document.createTextNode(data.result.results[i].stitle);
+              placeName.appendChild(text);
+              content[i].appendChild(placeName);
+              data.result.results.splice(i, 1);
+            }
+
+            for (let i = 0; i < plus.length; i++) {
+              let Url = data.result.results[i].file.split("https");
+
+              let PlaceImg = document.createElement("img");
+
+              PlaceImg.src = "https" + Url[1];
+              PlaceImg.className = "img-item";
+              plus[i].appendChild(PlaceImg);
+
+              let placeName = document.createElement("p");
+
+              let text = document.createTextNode(data.result.results[i].stitle);
+              placeName.appendChild(text);
+              plus[i].appendChild(placeName);
+
+              let plusName = document.getElementsByName("plus");
+              plusName[i].style.display = "none";
+              data.result.results.splice(i, 1);
+            }
+
+            for (let i = 0; i < pP.length; i++) {
+              let Url = data.result.results[i].file.split("https");
+
+              let PlaceImg = document.createElement("img");
+
+              PlaceImg.src = "https" + Url[1];
+              PlaceImg.className = "img-item";
+              pP[i].appendChild(PlaceImg);
+
+              let placeName = document.createElement("p");
+
+              let text = document.createTextNode(data.result.results[i].stitle);
+              placeName.appendChild(text);
+              pP[i].appendChild(placeName);
+
+              let pPName = document.getElementsByName("pP");
+              pPName[i].style.display = "none";
+              data.result.results.splice(i, 1);
+            }
+
+            for (let i = 0; i < Pp.length; i++) {
+              let Url = data.result.results[i].file.split("https");
+
+              let PlaceImg = document.createElement("img");
+
+              PlaceImg.src = "https" + Url[1];
+              PlaceImg.className = "img-item";
+              Pp[i].appendChild(PlaceImg);
+
+              let placeName = document.createElement("p");
+
+              let text = document.createTextNode(data.result.results[i].stitle);
+              placeName.appendChild(text);
+              Pp[i].appendChild(placeName);
+
+              let PpName = document.getElementsByName("Pp");
+              PpName[i].style.display = "none";
+              data.result.results.splice(i, 1);
+            }
+
+            for (let i = 0; i < pp.length; i++) {
+              let Url = data.result.results[i].file.split("https");
+
+              let PlaceImg = document.createElement("img");
+
+              PlaceImg.src = "https" + Url[1];
+              PlaceImg.className = "img-item";
+              pp[i].appendChild(PlaceImg);
+
+              let placeName = document.createElement("p");
+
+              let text = document.createTextNode(data.result.results[i].stitle);
+              placeName.appendChild(text);
+              pp[i].appendChild(placeName);
+
+              let ppName = document.getElementsByName("pp");
+              ppName[i].style.display = "none";
+              data.result.results.splice(i, 1);
+            }
+
+            for (let i = 0; i < PP.length; i++) {
+              let Url = data.result.results[i].file.split("https");
+
+              let PlaceImg = document.createElement("img");
+
+              PlaceImg.src = "https" + Url[1];
+              PlaceImg.className = "img-item";
+              PP[i].appendChild(PlaceImg);
+
+              let placeName = document.createElement("p");
+
+              let text = document.createTextNode(data.result.results[i].stitle);
+              placeName.appendChild(text);
+              PP[i].appendChild(placeName);
+
+              let PPName = document.getElementsByName("PP");
+              PPName[i].style.display = "none";
+              data.result.results.splice(i, 1);
+            }
+
+            for (let i = 0; i < pPp.length; i++) {
+              let Url = data.result.results[i].file.split("https");
+
+              let PlaceImg = document.createElement("img");
+
+              PlaceImg.src = "https" + Url[1];
+              PlaceImg.className = "img-item";
+              pPp[i].appendChild(PlaceImg);
+
+              let placeName = document.createElement("p");
+
+              let text = document.createTextNode(data.result.results[i].stitle);
+              placeName.appendChild(text);
+              pPp[i].appendChild(placeName);
+
+              let pPpName = document.getElementsByName("pPp");
+              pPpName[i].style.display = "none";
+              data.result.results.splice(i, 1);
+            }
+          });
+      }
+    </script>
+    <!-- <script>
+      document.getElementByName("pP").style.display = "none";
+      document.getElementByName("Pp").style.display = "none";
+      document.getElementByName("pp").style.display = "none";
+      document.getElementByName("PP").style.display = "none";
+      document.getElementByName("pPp").style.display = "none";
+    </script> -->
+    <nav class="computer">
+      <span>My Website</span>
+      <div class="nav-link">
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+        <a href="#">Item 4</a>
+      </div>
+    </nav>
+
+    <nav class="mobile">
+      <div class="mobile-set">
+        <span>My Website</span>
+
+        <div><i class="fa-solid fa-bars"></i></div>
+      </div>
+    </nav>
+
+    <div class="welcome">Welcome to MyHome</div>
+
+    <div class="content">
+      <div class="pro" id="pro1" name="pro" value="1">
+        <!-- <img
+          class="img-pro"
+          src="https://img.league-funny.com/imgur/165348499669_n.png"
+          alt=""
+        />
+        <p class="text-pro" id="placeName"> </p> -->
+      </div>
+      <div class="pro" id="pro2" name="pro" value="2">
+        <!-- <img
+          class="img-pro"
+          src="https://img.league-funny.com/imgur/165348499669_n.png"
+          alt=""
+        />
+        <p class="text-pro"  id="placeName"></p> -->
+      </div>
+    </div>
+
+    <div class="item" name="item">
+      <div class="item-content" id="content1" name="content" value="1">
+        <!-- <img class="img-item"
+            src="https://img.league-funny.com/imgur/165348499669_n.png"
+            alt=""
+          /> -->
+        <!-- <p id="placeName"> </p> -->
+      </div>
+
+      <div class="item-content" id="content2" name="content" value="2">
+        <!-- <img class="img-item"
+            src="https://img.league-funny.com/imgur/165348499669_n.png"
+            alt=""
+          /> -->
+        <!-- <p id="placeName"> </p> -->
+      </div>
+
+      <div class="item-content" id="content3" name="content" value="3">
+        <!-- <img class="img-item"
+            src="https://img.league-funny.com/imgur/165348499669_n.png"
+            alt=""
+          /> -->
+        <!-- <p id="placeName"> </p> -->
+      </div>
+
+      <div class="item-content" id="content4" name="content" value="4">
+        <!-- <img class="img-item"
+            src="https://img.league-funny.com/imgur/165348499669_n.png"
+            alt=""
+          /> -->
+        <!-- <p id="placeName"> </p> -->
+      </div>
+
+      <div class="item-content" id="content5" name="content" value="5">
+        <!-- <img class="img-item"
+            src="https://img.league-funny.com/imgur/165348499669_n.png"
+            alt=""
+          /> -->
+        <!-- <p id="placeName"> </p> -->
+      </div>
+
+      <div class="item-content" id="content6" name="content" value="6">
+        <!-- <img class="img-item"
+            src="https://img.league-funny.com/imgur/165348499669_n.png"
+            alt=""
+          /> -->
+        <!-- <p id="placeName"> </p> -->
+      </div>
+
+      <div class="item-content" id="content7" name="content" value="7">
+        <!-- <img class="img-item"
+            src="https://img.league-funny.com/imgur/165348499669_n.png"
+            alt=""
+          /> -->
+        <!-- <p id="placeName"> </p> -->
+      </div>
+
+      <div class="item-content" id="content8" name="content" value="8">
+        <!-- <img class="img-item"
+            src="https://img.league-funny.com/imgur/165348499669_n.png"
+            alt=""
+          /> -->
+        <!-- <p id="placeName"> </p> -->
+      </div>
+
+      <div class="item-content" id="plus1" name="plus" value="1"></div>
+      <div class="item-content" id="plus2" name="plus" value="2"></div>
+      <div class="item-content" id="plus3" name="plus" value="3"></div>
+      <div class="item-content" id="plus4" name="plus" value="4"></div>
+      <div class="item-content" id="plus5" name="plus" value="5"></div>
+      <div class="item-content" id="plus6" name="plus" value="6"></div>
+      <div class="item-content" id="plus7" name="plus" value="7"></div>
+      <div class="item-content" id="plus8" name="plus" value="8"></div>
+
+      <div class="item-content" id="pP1" name="pP" value="1"></div>
+      <div class="item-content" id="pP2" name="pP" value="2"></div>
+      <div class="item-content" id="pP3" name="pP" value="3"></div>
+      <div class="item-content" id="pP4" name="pP" value="4"></div>
+      <div class="item-content" id="pP5" name="pP" value="5"></div>
+      <div class="item-content" id="pP6" name="pP" value="6"></div>
+      <div class="item-content" id="pP7" name="pP" value="7"></div>
+      <div class="item-content" id="pP8" name="pP" value="8"></div>
+
+      <div class="item-content" id="Pp1" name="Pp" value="1"></div>
+      <div class="item-content" id="Pp2" name="Pp" value="2"></div>
+      <div class="item-content" id="Pp3" name="Pp" value="3"></div>
+      <div class="item-content" id="Pp4" name="Pp" value="4"></div>
+      <div class="item-content" id="Pp5" name="Pp" value="5"></div>
+      <div class="item-content" id="Pp6" name="Pp" value="6"></div>
+      <div class="item-content" id="Pp7" name="Pp" value="7"></div>
+      <div class="item-content" id="Pp8" name="Pp" value="8"></div>
+
+      <div class="item-content" id="pp1" name="pp" value="1"></div>
+      <div class="item-content" id="pp2" name="pp" value="2"></div>
+      <div class="item-content" id="pp3" name="pp" value="3"></div>
+      <div class="item-content" id="pp4" name="pp" value="4"></div>
+      <div class="item-content" id="pp5" name="pp" value="5"></div>
+      <div class="item-content" id="pp6" name="pp" value="6"></div>
+      <div class="item-content" id="pp7" name="pp" value="7"></div>
+      <div class="item-content" id="pp8" name="pp" value="8"></div>
+
+      <div class="item-content" id="PP1" name="PP" value="1"></div>
+      <div class="item-content" id="PP2" name="PP" value="2"></div>
+      <div class="item-content" id="PP3" name="PP" value="3"></div>
+      <div class="item-content" id="PP4" name="PP" value="4"></div>
+      <div class="item-content" id="PP5" name="PP" value="5"></div>
+      <div class="item-content" id="PP6" name="PP" value="6"></div>
+      <div class="item-content" id="PP7" name="PP" value="7"></div>
+      <div class="item-content" id="PP8" name="PP" value="8"></div>
+
+      <div class="item-content" id="pPp1" name="pPp" value="1"></div>
+      <div class="item-content" id="pPp2" name="pPp" value="2"></div>
+      <div class="item-content" id="pPp3" name="pPp" value="3"></div>
+      <div class="item-content" id="pPp4" name="pPp" value="4"></div>
+      <!-- <div class="item-content" id="pPp5" name="pPp" value="5"></div>
+      <div class="item-content" id="pPp6" name="pPp" value="6"></div>
+      <div class="item-content" id="pPp7" name="pPp" value="7"></div>
+      <div class="item-content" id="pPp8" name="pPp" value="8"></div> -->
+    </div>
+
+    <div class="butDiv">
+      <button class="but" id="but" onclick="loadmore() ">Load More</button>
+    </div>
+
+    <script>
+      function loadmore() {
+        function isHidden(el) {
+          var style = window.getComputedStyle(el); //el即DOM元素
+          return style.display === "none";
+        }
+        let plusName = document.getElementsByName("plus");
+        let pP = document.getElementsByName("pP");
+        let Pp = document.getElementsByName("Pp");
+        let pp = document.getElementsByName("pp");
+        let PP = document.getElementsByName("PP");
+        let pPp = document.getElementsByName("pPp");
+        let btn = document.getElementById("but");
+        if (isHidden(plusName[0]) === true) {
+          for (let i = 0; i < plusName.length; i++) {
+            plusName[i].style.display = "";
+          }
+        } else if (
+          isHidden(plusName[0]) === false &&
+          isHidden(pP[0]) === true
+        ) {
+          for (let i = 0; i < pP.length; i++) {
+            pP[i].style.display = "";
+          }
+        } else if (isHidden(pP[0]) === false && isHidden(Pp[0]) === true) {
+          for (let i = 0; i < Pp.length; i++) {
+            Pp[i].style.display = "";
+          }
+        } else if (isHidden(Pp[0]) === false && isHidden(pp[0]) === true) {
+          for (let i = 0; i < pp.length; i++) {
+            pp[i].style.display = "";
+          }
+        } else if (isHidden(pp[0]) === false && isHidden(PP[0]) === true) {
+          for (let i = 0; i < PP.length; i++) {
+            PP[i].style.display = "";
+          }
+        } else if (isHidden(PP[0]) === false && isHidden(pPp[0]) === true) {
+          for (let i = 0; i < pPp.length; i++) {
+            pPp[i].style.display = "";
+          }
+          btn.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
