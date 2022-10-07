@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.mobile {
+  display: none;
+}
+
+.welcome {
+  background-color: #e5faff;
+  text-align: center;
+  padding: 125px 0;
+  font-size: 40px;
+}
+
+.content {
+  /* outline: solid red 3px; */
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 1200px;
+  height: 50px;
+  margin: 20px auto;
+}
+
+.pro {
+  /* outline: orange solid 3px; */
+  display: flex;
+  align-items: center;
+
+  background-color: #e5faff;
+
+  width: 585px;
+  height: 50px;
+  margin: 0 5px;
+
+  font-size: 20px;
+}
+
+.img-pro {
+  width: 80px;
+  height: 50px;
+}
+
+.text-pro {
+  white-space: wrap;
+}
+
+.item {
+  /* outline: solid rgb(0, 255, 115) 3px; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item-content {
+  /* outline: solid purple 3px; */
+  background-color: #e5faff;
+  text-align: center;
+  font-size: 20px;
+  margin: 5px;
+  margin-bottom: 20px;
+  width: 280px;
+
+  /* max-height: 222px; */
+}
+
+.img-item {
+  width: 280px;
+  /* height: 157.5px; */
+  height: 200px;
+}
+
+.show {
+  display: none;
+}
+
+.butDiv {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.but {
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    width: 90%;
+  }
+
+  .pro {
+    width: 45%;
+  }
+
+  .item {
+    width: 90%;
+    /* flex-wrap: wrap; */
+  }
+
+  .item-content {
+    width: 45%;
+
+    margin-bottom: 100px;
+  }
+
+  .img-item {
+    width: 100%;
+    height: 85%;
+  }
+}
+
+@media (max-width: 600px) {
+  .computer {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .mobile-set {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .content {
+    flex-direction: column;
+
+    align-items: center;
+    width: 90%;
+    height: 120px;
+  }
+
+  .pro {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .item {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .item-content {
+    width: 100%;
+
+    margin: 0 0 20px 0;
+  }
+
+  .img-item {
+    width: 100%;
+    height: 100%;
+  }
+}
